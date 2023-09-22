@@ -1,0 +1,27 @@
+name: Build Godot Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Godot
+        id: build-godot
+        uses: manleydev/build-godot-action@v1.4.1
+        with:
+          name: index.html
+          preset: HTML5
+      - name: Copy netlify.toml
+        run: cp ./netlify.toml ${{ steps.build.outputs.build }}
+      - name: Install netlify client
+        run: npm install netlify
+      - name: Deploy to Netlify
+        env:
+          NETLIFY_SITE_ID: $
+          NETLIFY_AUTH_TOKEN: $
+        run: netlify deploy --dir=${{ steps.build.outputs.build }} --prod
