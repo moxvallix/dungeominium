@@ -17,11 +17,11 @@ jobs:
           name: index.html
           preset: HTML5
       - name: Copy netlify.toml
-        run: cp ./netlify.toml ${{ steps.build.outputs.build }}
+        run: cp netlify.toml build/
       - name: Install netlify client
         run: npm install netlify
       - name: Deploy to Netlify
         env:
           NETLIFY_SITE_ID: $
           NETLIFY_AUTH_TOKEN: $
-        run: netlify deploy --dir=${{ steps.build.outputs.build }} --prod
+        run: netlify deploy --dir=./build --prod
