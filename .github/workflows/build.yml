@@ -17,11 +17,11 @@ jobs:
           name: index.html
           preset: HTML5
       - name: Copy netlify.toml
-        run: cp ./netlify.toml ./build/
+        run: cp $GITHUB_WORKSPACE/netlify.toml $GITHUB_WORKSPACE/build/
       - name: Install netlify client
         run: npm install netlify
       - name: Deploy to Netlify
         env:
           NETLIFY_SITE_ID: $
           NETLIFY_AUTH_TOKEN: $
-        run: netlify deploy --dir=./build --prod
+        run: netlify deploy --dir=$GITHUB_WORKSPACE/build --prod
