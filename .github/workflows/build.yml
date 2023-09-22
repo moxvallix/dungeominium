@@ -21,7 +21,7 @@ jobs:
           name: index.html
           preset: HTML5
       - name: Install netlify client
-        run: npm install netlify
+        run: npm install netlify-cli
       - name: Deploy to Netlify
         env:
           NETLIFY_SITE_ID: ${{ vars.NETLIFY_SITE_ID }}
