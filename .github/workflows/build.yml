@@ -24,6 +24,6 @@ jobs:
         run: npm install netlify
       - name: Deploy to Netlify
         env:
-          NETLIFY_SITE_ID: $
-          NETLIFY_AUTH_TOKEN: $
+          NETLIFY_SITE_ID: ${{ vars.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ vars.NETLIFY_AUTH_TOKEN }}
         run: netlify deploy --dir=$GITHUB_WORKSPACE/build --prod
