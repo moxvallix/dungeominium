@@ -17,7 +17,7 @@ jobs:
           name: index.html
           preset: HTML5
       - name: Copy netlify.toml
-        run: cp netlify.toml build/
+        run: cp ./netlify.toml ./build/
       - name: Install netlify client
         run: npm install netlify
       - name: Deploy to Netlify
