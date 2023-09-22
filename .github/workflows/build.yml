@@ -10,14 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Copy netlify.toml
+        run: |
+        mkdir $GITHUB_WORKSPACE/build
+        cp $GITHUB_WORKSPACE/netlify.toml $GITHUB_WORKSPACE/build
       - name: Build Godot
         id: build-godot
         uses: manleydev/build-godot-action@v1.5.0
         with:
           name: index.html
           preset: HTML5
-      - name: Copy netlify.toml
-        run: cp $GITHUB_WORKSPACE/netlify.toml $GITHUB_WORKSPACE/build/
       - name: Install netlify client
         run: npm install netlify
       - name: Deploy to Netlify
