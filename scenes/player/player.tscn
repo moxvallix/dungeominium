@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://jw66qo08jjbr"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_k3gg8"]
+[ext_resource type="Script" path="res://scenes/player/camera.gd" id="2_mr2jo"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_xacnl"]
+size = Vector2(16, 16)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.99, 0.99)
+script = ExtResource("1_k3gg8")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_xacnl")
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -8, 4, -8, 8, -4, 8, 4, 4, 8, -4, 8, -8, 4, -8, -4)
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+script = ExtResource("2_mr2jo")

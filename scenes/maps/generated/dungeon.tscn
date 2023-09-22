@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://css4bv57ygg05"]
+
+[ext_resource type="TileSet" uid="uid://cx73c3o63uoy2" path="res://scenes/maps/generated/dungeon.tres" id="1_0rnfb"]
+[ext_resource type="Script" path="res://scenes/maps/generated/dungeon.gd" id="2_6ujmf"]
+
+[node name="Dungeon" type="TileMap"]
+unique_name_in_owner = true
+tile_set = ExtResource("1_0rnfb")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 917505, 0)
+script = ExtResource("2_6ujmf")
