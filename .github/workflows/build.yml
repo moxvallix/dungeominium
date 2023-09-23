@@ -24,8 +24,8 @@ jobs:
         run: npm install netlify-cli
       - name: Deploy to Netlify
         env:
-          NETLIFY_SITE_ID: ${{ vars.NETLIFY_SITE_ID }}
-          NETLIFY_AUTH_TOKEN: ${{ vars.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
         run: |
           echo $NETLIFY_SITE_ID
           netlify deploy --dir=$GITHUB_WORKSPACE/build --prod
