@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddnfqhniwf0wv"]
+
+[ext_resource type="Script" path="res://scenes/entities/entity.gd" id="1_1uo7e"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7hce0"]
+size = Vector2(16, 16)
+
+[node name="Entity" type="CharacterBody2D"]
+script = ExtResource("1_1uo7e")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_7hce0")
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -8, 4, -8, 8, -4, 8, 4, 4, 8, -4, 8, -8, 4, -8, -4)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://diu8od7t0ywmi"]
+
+[ext_resource type="PackedScene" uid="uid://ddnfqhniwf0wv" path="res://scenes/entities/entity.tscn" id="1_k0ael"]
+[ext_resource type="Script" path="res://scenes/entities/player/player.gd" id="1_ryjkl"]
+[ext_resource type="Script" path="res://scenes/entities/player/camera.gd" id="2_ts4d3"]
+
+[node name="Player" instance=ExtResource("1_k0ael")]
+scale = Vector2(0.99, 0.99)
+script = ExtResource("1_ryjkl")
+sneak = 0.4
+sprint = 2
+
+[node name="Camera" type="Camera2D" parent="." index="2"]
+zoom = Vector2(5, 5)
+script = ExtResource("2_ts4d3")

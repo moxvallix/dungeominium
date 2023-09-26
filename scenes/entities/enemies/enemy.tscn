@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://drrv5k547lyxj"]
+
+[ext_resource type="PackedScene" uid="uid://ddnfqhniwf0wv" path="res://scenes/entities/entity.tscn" id="1_y153w"]
+[ext_resource type="Script" path="res://scenes/entities/enemies/enemy.gd" id="2_t47v6"]
+
+[node name="Enemy" instance=ExtResource("1_y153w")]
+script = ExtResource("2_t47v6")
+target_coords = Vector2(0, 0)
+navigation_delay = 10
+slowdown_range = 20.0
+minimum_distance = 18.0
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="2"]
+unique_name_in_owner = true
+target_desired_distance = 32.0

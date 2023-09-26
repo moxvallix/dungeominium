@@ -1,11 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5wxsvuwjhmr4"]
+[gd_scene load_steps=5 format=3 uid="uid://b5wxsvuwjhmr4"]
 
-[ext_resource type="PackedScene" uid="uid://jw66qo08jjbr" path="res://scenes/player/player.tscn" id="1_apn3l"]
+[ext_resource type="PackedScene" uid="uid://diu8od7t0ywmi" path="res://scenes/entities/player/player.tscn" id="1_apn3l"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_uof3p"]
 [ext_resource type="PackedScene" uid="uid://css4bv57ygg05" path="res://scenes/maps/generated/dungeon.tscn" id="2_15h3n"]
+[ext_resource type="PackedScene" uid="uid://drrv5k547lyxj" path="res://scenes/entities/enemies/enemy.tscn" id="3_5g2qs"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_uof3p")
 
 [node name="Dungeon" parent="." instance=ExtResource("2_15h3n")]
 
+[node name="Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_5g2qs")]
+position = Vector2(636, 397)
+target = NodePath("../Player")
+navigation_delay = 10
+slowdown_range = 20.0
+minimum_distance = 18.0
+
 [node name="Player" parent="." instance=ExtResource("1_apn3l")]
 position = Vector2(634, 352)
+
+[connection signal="position_updated" from="Player" to="." method="_on_player_position_updated"]

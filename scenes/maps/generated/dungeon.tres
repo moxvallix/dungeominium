@@ -1,6 +1,11 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cx73c3o63uoy2"]
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://cx73c3o63uoy2"]
 
 [ext_resource type="Texture2D" uid="uid://baxj65uigeqr4" path="res://assets/tiles/dungeon.png" id="1_rmxc6"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ua06t"]
+vertices = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5q0a"]
 texture = ExtResource("1_rmxc6")
@@ -246,6 +251,7 @@ texture = ExtResource("1_rmxc6")
 12:5/0 = 0
 12:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:5/0/physics_layer_0/angular_velocity = 0.0
+12:5/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ua06t")
 13:5/0 = 0
 13:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:5/0/physics_layer_0/angular_velocity = 0.0
@@ -309,6 +315,7 @@ texture = ExtResource("1_rmxc6")
 
 [resource]
 physics_layer_0/collision_layer = 1
+navigation_layer_0/layers = 1
 custom_data_layer_0/name = "is_door"
 custom_data_layer_0/type = 1
 sources/1 = SubResource("TileSetAtlasSource_m5q0a")

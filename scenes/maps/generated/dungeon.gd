@@ -10,7 +10,6 @@ var map: Array
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	generate_map()
-	pass
 
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
@@ -24,7 +23,7 @@ func generate_map(map_seed = seed):
 #
 	set_tilemap_from_map()
 
-func random_fill_map(map_seed) -> void:
+func random_fill_map(map_seed: String) -> void:
 	map.clear()
 	var rng := RandomNumberGenerator.new()
 	rng.seed = hash(map_seed)
