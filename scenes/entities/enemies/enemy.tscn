@@ -13,3 +13,5 @@ minimum_distance = 18.0
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." index="2"]
 unique_name_in_owner = true
 target_desired_distance = 32.0
+path_postprocessing = 1
+debug_enabled = true

@@ -13,9 +13,10 @@ script = ExtResource("1_uof3p")
 [node name="Enemy" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_5g2qs")]
 position = Vector2(636, 397)
 target = NodePath("../Player")
-navigation_delay = 10
-slowdown_range = 20.0
-minimum_distance = 18.0
+
+[node name="Enemy2" parent="." node_paths=PackedStringArray("target") instance=ExtResource("3_5g2qs")]
+position = Vector2(498, 432)
+target = NodePath("../Player")
 
 [node name="Player" parent="." instance=ExtResource("1_apn3l")]
 position = Vector2(634, 352)
